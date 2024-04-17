@@ -21,3 +21,5 @@ opt.foldmethod = "indent" -- 设置折叠方法为 indent（基于缩进）
 opt.foldlevel = 99 -- 设置默认折叠级别为 99, 表示所有代码都会被折叠起来，除非手动展开
 opt.foldenable = true -- 启用折叠功能
 opt.foldlevelstart = 99 -- 设置起始折叠级别为 99
+
+opt.foldmethod = "indent" -- 根据 indent 折叠
