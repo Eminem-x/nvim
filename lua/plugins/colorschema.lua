@@ -9,11 +9,14 @@ return {
         priority = 1000
     },
     -- add onedark
-    { "joshdick/onedark.vim" },
+    -- { "joshdick/onedark.vim" },
     {
         "folke/tokyonight.nvim",
         lazy = true,
         opts = { style = "storm" },
+    },
+    {
+        "navarasu/onedark.nvim",
     },
 
     -- Configure LazyVim to load gruvbox
@@ -21,7 +24,7 @@ return {
         "LazyVim/LazyVim",
         opts = {
             -- colorscheme = "catppuccin",
-            colorscheme = "tokyonight",
+            colorscheme = "onedark",
         },
     },
 }
