@@ -68,5 +68,6 @@ return {
             },
         }
     },
-    { "chrisgrieser/nvim-spider", lazy = true },
+    { "chrisgrieser/nvim-spider",   lazy = true },
+    { "anuvyklack/pretty-fold.nvim" }
 }
