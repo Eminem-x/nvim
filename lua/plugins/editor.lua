@@ -75,5 +75,5 @@ return {
             skipInsignificantPunctuation = false,
         }
     },
-    { "anuvyklack/pretty-fold.nvim" }
+    { vim.api.nvim_exec("language en_US", true) } -- 设置默认语言为英语
 }
