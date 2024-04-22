@@ -22,6 +22,7 @@ require("lazy").setup({
         -- python lang
         { import = "lazyvim.plugins.extras.lang.python" },
 
+        { import = "lazyvim.plugins.extras.util.gitui" },
         { import = "lazyvim.plugins.extras.formatting.prettier" },
         -- dap
         { import = "lazyvim.plugins.extras.dap.core" },
