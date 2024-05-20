@@ -28,6 +28,9 @@ opt.mouse = "" -- 禁用鼠标
 opt.mousescroll = "ver:0,hor:0" -- 禁用鼠标滚动
 
 -- LSP Server to use for Python.
--- Set to "basedpyright" to use basedpyright instead of pyright.
+-- Set to "basedpyright" to use basedpyjight instead of pyright.
 vim.g.lazyvim_python_lsp = "pyright"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+vim.g.lazyvim_python_ruff = "ruff"
+
+vim.o.guifont = "SauceCodePro Nerd Font Mono:h14"
+-- vim.o.guifont = "JetBrainsMono Nerd Font Mono:h14"
