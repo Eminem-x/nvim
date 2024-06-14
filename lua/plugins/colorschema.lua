@@ -14,6 +14,9 @@ return {
   -- add onedark
   -- { "joshdick/onedark.vim" },
   {
+    "rebelot/kanagawa.nvim",
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = true,
     opts = { style = "storm" },
@@ -30,7 +33,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "catppuccin",
-      colorscheme = "catppuccin",
+      colorscheme = "kanagawa",
     },
   },
 
