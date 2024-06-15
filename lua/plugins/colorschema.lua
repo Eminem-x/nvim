@@ -19,7 +19,8 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
-    opts = { style = "storm" },
+    -- moon, storm, night, day
+    opts = { style = "moon" },
   },
   {
     "navarasu/onedark.nvim",
@@ -33,7 +34,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "catppuccin",
-      colorscheme = "kanagawa",
+      colorscheme = "tokyonight",
     },
   },
 
