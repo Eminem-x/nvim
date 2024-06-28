@@ -80,4 +80,25 @@ return {
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {},
   },
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup({})
+    end,
+  },
+  {
+    "anuvyklack/middleclass",
+  },
+  {
+    "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+    },
+    config = function()
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
+      vim.o.equalalways = false
+      require("windows").setup()
+    end,
+  },
 }
