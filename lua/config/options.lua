@@ -35,6 +35,7 @@ vim.g.lazyvim_python_ruff = "ruff_lsp"
 
 -- vim.o.guifont = "JetBrainsMono Nerd Font Mono:h14"
 vim.o.guifont = "SauceCodePro Nerd Font Mono:h13"
+vim.api.nvim_exec("language en_US", true)
 
 -- 将 Cmd+V 映射为从系统剪贴板粘贴
 vim.api.nvim_set_keymap("n", "<D-v>", '"+p', { noremap = true, silent = true })
