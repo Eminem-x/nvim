@@ -1,3 +1,4 @@
 return {
-    { "ellisonleao/gruvbox.nvim", enabled = false },
+  { "ellisonleao/gruvbox.nvim", enabled = false },
+  { "tris203/precognition.nvim", enabled = false },
 }
