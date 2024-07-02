@@ -1,44 +1,19 @@
 -- https://vimcolorschemes.com/ 可参考的 nvim 背景
 return {
-  -- add gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = { colorscheme = "tokyonight" },
+  },
   { "ellisonleao/gruvbox.nvim" },
-  -- add catppuccin
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      no_italic = true,
-    },
-  },
-  -- add onedark
-  -- { "joshdick/onedark.vim" },
-  {
-    "rebelot/kanagawa.nvim",
-  },
+  { "rebelot/kanagawa.nvim" },
   {
     "folke/tokyonight.nvim",
     lazy = true,
     -- moon, storm, night, day
     opts = { style = "moon" },
   },
-  {
-    "navarasu/onedark.nvim",
-  },
-  {
-    "Mofiqul/vscode.nvim",
-  },
-
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      -- colorscheme = "catppuccin",
-      colorscheme = "tokyonight",
-    },
-  },
-
-  -- dashboard
+  { "navarasu/onedark.nvim" },
+  { "Mofiqul/vscode.nvim" },
   {
     "goolord/alpha-nvim",
     opts = function()
