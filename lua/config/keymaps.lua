@@ -18,3 +18,16 @@ vim.keymap.set("", "<up>", "<nop>", { noremap = true })
 vim.keymap.set("", "<down>", "<nop>", { noremap = true })
 -- vim.keymap.set("i", "<up>", "<nop>", { noremap = true })
 -- vim.keymap.set("i", "<down>", "<nop>", { noremap = true })
+
+-- floating terminal
+local lazyterm = function()
+  LazyVim.terminal(nil, { cwd = LazyVim.root() })
+end
+vim.keymap.set("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
+-- map("n", "<leader>ft", function()
+--   lazyvim.terminal()
+-- end, { desc = "terminal (cwd)" })
+vim.keymap.set("n", "<leader>fT", "<cmd>ToggleTerm size=40 direction=float<CR>", { desc = "terminal (cwd)" })
+vim.keymap.set("n", "<c-q>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "terminal (cwd)" })
+vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })

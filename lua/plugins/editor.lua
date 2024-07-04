@@ -150,4 +150,5 @@ return {
       end, { silent = true, nowait = true })
     end,
   },
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
 }
