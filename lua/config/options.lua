@@ -6,9 +6,9 @@ local opt = vim.opt
 
 opt.relativenumber = false
 
-opt.tabstop = 4 -- A TAB character looks like 4 spaces
+-- opt.tabstop = 4 -- A TAB character looks like 4 spaces
+-- opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 
 opt.wrap = true -- 当文本长度超过窗口宽度时，自动换行文本
 

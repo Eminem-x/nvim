@@ -1,4 +1,5 @@
 return {
+  -- add buffer and git neo-tree
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -20,6 +21,8 @@ return {
       },
     },
   },
+
+  -- add navbuddy
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -68,6 +71,8 @@ return {
       },
     },
   },
+
+  -- add nvim-spider which enhance ewbn
   {
     "chrisgrieser/nvim-spider",
     lazy = true,
@@ -75,17 +80,23 @@ return {
       skipInsignificantPunctuation = false,
     },
   },
+
+  -- which disable your bad vim operator
   {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {},
   },
+
+  -- optimize your nvim cursor move
   {
     "karb94/neoscroll.nvim",
     config = function()
       require("neoscroll").setup({})
     end,
   },
+
+  --optimize your windows split
   {
     "anuvyklack/middleclass",
   },
@@ -101,6 +112,8 @@ return {
       require("windows").setup()
     end,
   },
+
+  -- fullscreen your current buffer
   {
     "nyngwang/NeoZoom.lua",
     config = function()
@@ -150,7 +163,11 @@ return {
       end, { silent = true, nowait = true })
     end,
   },
+
+  -- enhance your terminal
   { "akinsho/toggleterm.nvim", version = "*", config = true },
+
+  -- expand your edgy window
   {
     "folke/edgy.nvim",
     event = "VeryLazy",

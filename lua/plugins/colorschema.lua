@@ -25,6 +25,8 @@ return {
       dashboard.section.header.val = vim.split(logo, "\n")
     end,
   },
+
+  -- set the theme of lazyvim
   {
     "LazyVim/LazyVim",
     opts = { colorscheme = "tokyonight" },

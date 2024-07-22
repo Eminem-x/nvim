@@ -7,8 +7,8 @@ return {
           settings = {
             gopls = {
               -- 关闭高版本 Go 插件
-              gofumpt = false,
-              staticcheck = false,
+              gofumpt = true,
+              staticcheck = true,
             },
           },
         },
@@ -23,6 +23,7 @@ return {
           settings = {
             pylsp = {
               plugins = {
+                -- 禁用一些 python 的 linter
                 pycodestyle = {
                   enabled = false,
                   ignore = { "W391", "W504", "W291" },
