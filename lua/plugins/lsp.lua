@@ -8,7 +8,14 @@ return {
             gopls = {
               -- 关闭高版本 Go 插件
               gofumpt = true,
-              staticcheck = true,
+              staticcheck = false,
+              analyses = {
+                fieldalignment = false,
+                nilness = true,
+                unusedparams = true,
+                unusedwrite = true,
+                useany = true,
+              },
             },
           },
         },
