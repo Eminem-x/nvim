@@ -1,15 +1,5 @@
 -- https://vimcolorschemes.com/ 可参考的 nvim 背景
 return {
-  { "ellisonleao/gruvbox.nvim" },
-  { "rebelot/kanagawa.nvim" },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-    -- moon, storm, night, day
-    opts = { style = "storm" },
-  },
-  { "navarasu/onedark.nvim" },
-  { "Mofiqul/vscode.nvim" },
   {
     "goolord/alpha-nvim",
     opts = function()
@@ -25,6 +15,21 @@ return {
       dashboard.section.header.val = vim.split(logo, "\n")
     end,
   },
+
+  { "ellisonleao/gruvbox.nvim" },
+
+  { "rebelot/kanagawa.nvim" },
+
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    -- moon, storm, night, day
+    opts = { style = "moon" },
+  },
+
+  { "navarasu/onedark.nvim" },
+
+  { "Mofiqul/vscode.nvim" },
 
   -- set the theme of lazyvim
   {
