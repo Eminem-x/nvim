@@ -39,3 +39,10 @@ vim.api.nvim_set_keymap("i", "<D-v>", "<C-r>+", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("v", "<D-v>", '"+p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<D-v>", "<C-r>+", { noremap = true, silent = true })
+
+-- db config
+vim.g.dbs = {
+  { name = "py-test", url = vim.fn.getenv("py_test") },
+  { name = "py-pre", url = vim.fn.getenv("py_pre") },
+  { name = "go-pre", url = vim.fn.getenv("go_pre") },
+}
