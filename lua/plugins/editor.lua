@@ -173,13 +173,13 @@ return {
     event = "VeryLazy",
     opts = {
       bottom = {
-        -- {
-        --   ft = "lazyterm",
-        --   size = { height = 0.1 },
-        --   filter = function(buf)
-        --     return not vim.b[buf].lazyterm_cmd
-        --   end,
-        -- },
+        {
+          ft = "lazyterm",
+          size = { height = 0.3 },
+          filter = function(buf)
+            return not vim.b[buf].lazyterm_cmd
+          end,
+        },
         { ft = "dbout", size = { height = 0.5 } },
       },
       options = {

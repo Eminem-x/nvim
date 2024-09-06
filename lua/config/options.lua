@@ -44,5 +44,10 @@ vim.api.nvim_set_keymap("t", "<D-v>", "<C-r>+", { noremap = true, silent = true 
 vim.g.dbs = {
   { name = "py-test", url = vim.fn.getenv("py_test") },
   { name = "py-pre", url = vim.fn.getenv("py_pre") },
-  { name = "go-pre", url = vim.fn.getenv("go_pre") },
+  { name = "py-prod", url = vim.fn.getenv("py_prod") },
+  { name = "go-fe-pre", url = vim.fn.getenv("go_fe_pre") },
+  { name = "go-be-pre", url = vim.fn.getenv("go_be_pre") },
+  { name = "go-fe-prod", url = vim.fn.getenv("go_fe_prod") },
+  { name = "go-be-prod", url = vim.fn.getenv("go_be_prod") },
+  { name = "go-be-prod-us", url = vim.fn.getenv("go_be_prod_us") },
 }
