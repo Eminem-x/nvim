@@ -52,6 +52,8 @@ return {
           "kitex_gen",
           "go.mod",
           "go.sum",
+          "biz/model",
+          "idl",
         },
       },
     },
