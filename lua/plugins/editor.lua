@@ -197,4 +197,10 @@ return {
       require("window-picker").setup()
     end,
   },
+
+  -- Reveal whitespace characters in visual mode, similar to VSCode.
+  {
+    "mcauley-penney/visual-whitespace.nvim",
+    -- config = true,
+  },
 }

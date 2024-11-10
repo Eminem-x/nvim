@@ -31,6 +31,15 @@ return {
 
   { "Mofiqul/vscode.nvim" },
 
+  {
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
+    opts = {
+      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    },
+  },
+
   -- set the theme of lazyvim
   {
     "LazyVim/LazyVim",

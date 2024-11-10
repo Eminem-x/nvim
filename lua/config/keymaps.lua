@@ -31,3 +31,5 @@ vim.keymap.set("n", "<leader>fT", "<cmd>ToggleTerm size=40 direction=float<CR>",
 vim.keymap.set("n", "<c-q>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "terminal (cwd)" })
 vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
+
+vim.keymap.set("n", "<leader>vw", require("visual-whitespace").toggle, { desc = "Toggle Visual Whitespace" })
