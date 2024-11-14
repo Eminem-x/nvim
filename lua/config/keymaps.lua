@@ -13,23 +13,20 @@ vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<C
 vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 
--- disablse scrolling on touchpad
+-- disable scrolling on touchpad
 vim.keymap.set("", "<up>", "<nop>", { noremap = true })
 vim.keymap.set("", "<down>", "<nop>", { noremap = true })
--- vim.keymap.set("i", "<up>", "<nop>", { noremap = true })
--- vim.keymap.set("i", "<down>", "<nop>", { noremap = true })
-
--- floating terminal
-local lazyterm = function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
-end
-vim.keymap.set("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
--- map("n", "<leader>ft", function()
---   lazyvim.terminal()
--- end, { desc = "terminal (cwd)" })
-vim.keymap.set("n", "<leader>fT", "<cmd>ToggleTerm size=40 direction=float<CR>", { desc = "terminal (cwd)" })
-vim.keymap.set("n", "<c-q>", [[<C-\><C-n><cmd>ToggleTerm<CR>]], { desc = "terminal (cwd)" })
-vim.keymap.set("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
-vim.keymap.set("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
 
 vim.keymap.set("n", "<leader>vw", require("visual-whitespace").toggle, { desc = "Toggle Visual Whitespace" })
+
+-- snacks terminal
+vim.keymap.set("n", "<leader>ft", function()
+  -- 传入 nil 作为命令，让它使用默认的 shell
+  -- 通过 opts 参数设置窗口位置
+  Snacks.terminal(nil, {
+    win = { position = "float" },
+  })
+end, { desc = "Toggle Float Terminal" })
+vim.keymap.set("n", "<leader>fT", function()
+  Snacks.terminal()
+end, { desc = "Toggle Bottom Terminal" })

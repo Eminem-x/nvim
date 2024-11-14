@@ -23,8 +23,10 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = true,
-    -- moon, storm, night, day
-    opts = { style = "storm" },
+    opts = {
+      -- moon, storm, night, day
+      style = "storm",
+    },
   },
 
   { "navarasu/onedark.nvim" },
