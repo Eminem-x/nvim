@@ -207,5 +207,8 @@ return {
   {
     "ojroques/nvim-osc52",
     lazy = false,
+    enabled = function()
+      return vim.fn.getenv("SSH_CONNECTION") ~= nil
+    end,
   },
 }
