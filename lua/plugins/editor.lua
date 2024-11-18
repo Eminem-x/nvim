@@ -203,4 +203,9 @@ return {
     "mcauley-penney/visual-whitespace.nvim",
     -- config = true,
   },
+
+  {
+    "ojroques/nvim-osc52",
+    lazy = false,
+  },
 }

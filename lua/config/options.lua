@@ -12,7 +12,7 @@ opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB
 
 opt.wrap = true -- 当文本长度超过窗口宽度时，自动换行文本
 
-vim.api.nvim_exec("language en_US", true)
+-- vim.api.nvim_exec("language en_US", true)
 opt.spelllang = "en,cjk" -- 同时启用英语和中日韩语言的拼写检查
 opt.spelloptions = "camel" -- 拼写检查会忽略包含大写字母的单词
 
