@@ -204,11 +204,18 @@ return {
     -- config = true,
   },
 
+  -- osc52 for ssh connection
   {
     "ojroques/nvim-osc52",
     lazy = false,
     enabled = function()
       return vim.fn.getenv("SSH_CONNECTION") ~= nil
     end,
+  },
+
+  -- highlight undo
+  {
+    "tzachar/highlight-undo.nvim",
+    keys = { { "u" }, { "<C-r>" } },
   },
 }
