@@ -10,7 +10,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-if vim.fn.getenv("SSH_CONNECTION") ~= nil then
+if vim.fn.getenv("SSH_CONNECTION") ~= nil and vim.fn.getenv("SSH_CONNECTION") ~= vim.NIL then
+  vim.notify(vim.fn.getenv("SSH_CONNECTION"), "warn", { title = "LazyVim" })
+  vim.notify("SSH connection detected, disabling clipboard", "warn", { title = "LazyVim" })
   vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
       if vim.v.event.operator == "y" and vim.v.event.regname == "" then
