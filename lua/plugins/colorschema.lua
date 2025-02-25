@@ -29,7 +29,7 @@ return {
     },
   },
 
-  { "navarasu/onedark.nvim" },
+  { "navarasu/onedark.nvim", opts = { style = "deep" } },
 
   { "Mofiqul/vscode.nvim" },
 
@@ -38,8 +38,21 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
     },
+  },
+
+  { "EdenEast/nightfox.nvim" },
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine-moon",
+  },
+
+  {
+    "olimorris/onedarkpro.nvim",
+    name = "onedarkpro",
+    lazy = true,
   },
 
   -- set the theme of lazyvim
