@@ -24,6 +24,9 @@ opt.foldlevel = 99 -- 设置默认折叠级别为 99, 表示所有代码都会�
 opt.mouse = "" -- 禁用鼠标
 opt.mousescroll = "ver:0,hor:0" -- 禁用鼠标滚动
 
+-- default dark mode
+vim.go.background = "dark"
+
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyjight instead of pyright.
 -- vim.g.lazyvim_python_lsp = "basedpyright"
