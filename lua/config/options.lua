@@ -27,6 +27,9 @@ opt.mousescroll = "ver:0,hor:0" -- 禁用鼠标滚动
 -- default dark mode
 vim.go.background = "dark"
 
+-- 启用 AI inline ghost text（类似 Cursor）
+vim.g.ai_cmp = false
+
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyjight instead of pyright.
 -- vim.g.lazyvim_python_lsp = "basedpyright"

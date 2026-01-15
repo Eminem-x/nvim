@@ -1,12 +1,16 @@
 return {
-  -- Tab 补全：Tab 选择下一项，Shift-Tab 选择上一项
+  -- Tab 补全：优先接受 AI 补全，然后选择下一项
   {
     "saghen/blink.cmp",
     opts = {
       keymap = {
         preset = "enter",
-        ["<Tab>"] = { "select_next", "fallback" },
-        ["<S-Tab>"] = { "select_prev", "fallback" },
+        ["<Tab>"] = {
+          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
+          "select_next",
+          "fallback",
+        },
+        ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
       },
     },
   },
