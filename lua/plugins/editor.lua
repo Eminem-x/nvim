@@ -177,6 +177,10 @@ return {
         },
         { ft = "dbout", size = { height = 0.5 } },
       },
+      right = {
+        { title = "Outline", ft = "Outline", size = { height = 0.6 } },
+        { title = "Database", ft = "dbui", size = { height = 0.4 }, open = false },
+      },
       options = {
         left = { size = 40 },
         right = { size = 50 },
