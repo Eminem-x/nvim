@@ -98,13 +98,8 @@ return {
 
   --optimize your windows split
   {
-    "anuvyklack/middleclass",
-  },
-  {
     "anuvyklack/windows.nvim",
-    dependencies = {
-      "anuvyklack/middleclass",
-    },
+    dependencies = { "anuvyklack/middleclass" },
     config = function()
       vim.o.winwidth = 10
       vim.o.winminwidth = 10
