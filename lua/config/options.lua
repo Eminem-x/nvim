@@ -31,17 +31,10 @@ vim.go.background = "dark"
 -- Set to "basedpyright" to use basedpyjight instead of pyright.
 -- vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_lsp = "pylsp"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+vim.g.lazyvim_python_ruff = "ruff"
 vim.g.codeium_enabled = true
 
 vim.o.guifont = "SauceCodePro Nerd Font Mono:h13"
-
--- 将 Cmd+V 映射为从系统剪贴板粘贴
-vim.api.nvim_set_keymap("n", "<D-v>", '"+p', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<D-v>", "<C-r>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<D-v>", '"+p', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("t", "<D-v>", "<C-r>+", { noremap = true, silent = true })
 
 -- db config
 vim.g.dbs = {

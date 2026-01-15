@@ -102,7 +102,7 @@ return {
   },
   {
     "anuvyklack/windows.nvim",
-    requires = {
+    dependencies = {
       "anuvyklack/middleclass",
     },
     config = function()
