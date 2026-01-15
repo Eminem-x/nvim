@@ -4,7 +4,7 @@
 
 local opt = vim.opt
 
-opt.relativenumber = false
+opt.relativenumber = true
 
 -- opt.tabstop = 4 -- A TAB character looks like 4 spaces
 -- opt.shiftwidth = 4 -- Number of spaces inserted when indenting
