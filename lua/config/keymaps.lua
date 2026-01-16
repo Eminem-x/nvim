@@ -31,6 +31,33 @@ vim.keymap.set("n", "<leader>fT", function()
   Snacks.terminal()
 end, { desc = "Toggle Bottom Terminal" })
 
+-- 多终端管理
+local term_id = 0
+-- 新建浮动终端
+vim.keymap.set("n", "<leader>fn", function()
+  term_id = term_id + 1
+  Snacks.terminal.open(nil, { win = { position = "float" }, env = { SNACKS_TERM = tostring(term_id) } })
+end, { desc = "New Float Terminal" })
+
+-- 终端列表选择器
+vim.keymap.set("n", "<leader>fl", function()
+  local terminals = Snacks.terminal.list()
+  if #terminals == 0 then
+    vim.notify("No terminals open", vim.log.levels.INFO)
+    return
+  end
+  local names = {}
+  for i, _ in ipairs(terminals) do
+    table.insert(names, "Terminal " .. i)
+  end
+  vim.ui.select(names, { prompt = "Select Terminal:" }, function(_, idx)
+    if idx then
+      terminals[idx]:show()
+      terminals[idx]:focus()
+    end
+  end)
+end, { desc = "List Terminals" })
+
 -- Cmd+V 从系统剪贴板粘贴
 vim.keymap.set("n", "<D-v>", '"+p', { noremap = true, silent = true })
 vim.keymap.set("i", "<D-v>", "<C-r>+", { noremap = true, silent = true })
