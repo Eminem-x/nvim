@@ -1,5 +1,13 @@
 return {
   {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        python = { "ruff_organize_imports", "ruff_format" },
+      },
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -14,19 +22,6 @@ return {
                 unusedparams = true,
                 unusedwrite = true,
                 useany = true,
-              },
-            },
-          },
-        },
-        pylsp = {
-          settings = {
-            pylsp = {
-              plugins = {
-                pycodestyle = {
-                  enabled = false,
-                  ignore = { "W391", "W504", "W291" },
-                  maxLineLength = 200,
-                },
               },
             },
           },

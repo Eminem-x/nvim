@@ -3,12 +3,12 @@
 -- Add any additional autocmds here
 
 -- Disable autoformat for lua files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "python" },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "python" },
+--   callback = function()
+--     vim.b.autoformat = false
+--   end,
+-- })
 
 if vim.fn.getenv("SSH_CONNECTION") ~= nil and vim.fn.getenv("SSH_CONNECTION") ~= vim.NIL then
   vim.notify(vim.fn.getenv("SSH_CONNECTION"), "warn", { title = "LazyVim" })

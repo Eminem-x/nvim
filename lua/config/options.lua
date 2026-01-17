@@ -30,13 +30,6 @@ vim.go.background = "dark"
 -- 启用 AI inline ghost text（类似 Cursor）
 vim.g.ai_cmp = false
 
--- LSP Server to use for Python.
--- Set to "basedpyright" to use basedpyjight instead of pyright.
--- vim.g.lazyvim_python_lsp = "basedpyright"
-vim.g.lazyvim_python_lsp = "pylsp"
-vim.g.lazyvim_python_ruff = "ruff"
-vim.g.codeium_enabled = true
-
 vim.o.guifont = "SauceCodePro Nerd Font Mono:h13"
 
 -- db config
