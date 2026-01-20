@@ -22,6 +22,26 @@ return {
     },
   },
 
+  -- snacks explorer: 禁用 esc 关闭，让 flash 可以正常退出，用 q 关闭
+  {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          explorer = {
+            win = {
+              list = {
+                keys = {
+                  ["<esc>"] = { "", mode = "n" },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
   -- add navbuddy
   {
     "neovim/nvim-lspconfig",
