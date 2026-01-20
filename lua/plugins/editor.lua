@@ -155,6 +155,13 @@ return {
       })
       vim.keymap.set("n", "<CR>", function()
         vim.cmd("NeoZoomToggle")
+        -- NeoZoom 硬编码 zindex=5，手动提升避免被 neo-tree 遮挡
+        local win = vim.api.nvim_get_current_win()
+        local config = vim.api.nvim_win_get_config(win)
+        if config.relative ~= "" then
+          config.zindex = 50
+          vim.api.nvim_win_set_config(win, config)
+        end
       end, { silent = true, nowait = true })
     end,
   },
@@ -216,5 +223,20 @@ return {
   {
     "tzachar/highlight-undo.nvim",
     keys = { { "u" }, { "<C-r>" } },
+  },
+
+  -- yazi file manager
+  {
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>-", "<cmd>Yazi<cr>", desc = "Open yazi at current file" },
+      { "<leader>cw", "<cmd>Yazi cwd<cr>", desc = "Open yazi in cwd" },
+      { "<c-up>", "<cmd>Yazi toggle<cr>", desc = "Resume last yazi session" },
+    },
+    opts = {
+      open_for_directories = true,
+    },
   },
 }
