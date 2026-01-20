@@ -1,4 +1,23 @@
 return {
+  -- Claude Code: diff 打开后焦点保持在 terminal
+  {
+    "coder/claudecode.nvim",
+    opts = {
+      diff_opts = {
+        keep_terminal_focus = true,
+      },
+    },
+  },
+
+  -- 文件被外部修改后自动刷新 buffer（适配 Claude Code 等 AI 工具）
+  {
+    "diogo464/hotreload.nvim",
+    event = "VeryLazy",
+    opts = {
+      interval = 500,
+    },
+  },
+
   -- Tab 补全：优先接受 AI 补全，然后选择下一项
   {
     "saghen/blink.cmp",
@@ -6,8 +25,9 @@ return {
       keymap = {
         preset = "enter",
         ["<Tab>"] = {
-          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
+          "snippet_forward",
           "select_next",
+          LazyVim.cmp.map({ "ai_accept" }),
           "fallback",
         },
         ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
