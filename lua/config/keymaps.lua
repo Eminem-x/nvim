@@ -62,5 +62,6 @@ end, { desc = "List Terminals" })
 vim.keymap.set("n", "<D-v>", '"+p', { noremap = true, silent = true })
 vim.keymap.set("i", "<D-v>", "<C-r>+", { noremap = true, silent = true })
 vim.keymap.set("v", "<D-v>", '"+p', { noremap = true, silent = true })
-vim.keymap.set("c", "<D-v>", "<C-r>+", { noremap = true, silent = true })
+-- 命令行模式不能 silent，否则粘贴后 cmdline 不重绘，要再敲一个字符才显示
+vim.keymap.set("c", "<D-v>", "<C-r>+", { noremap = true })
 vim.keymap.set("t", "<D-v>", "<C-r>+", { noremap = true, silent = true })

@@ -23,23 +23,74 @@ return {
   },
 
   -- snacks explorer: 禁用 esc 关闭，让 flash 可以正常退出，用 q 关闭
+  -- snacks grep: <a-t> 排除测试文件、<a-g> 排除生成代码、<a-c> 区分大小写、<a-w> 全词匹配，
+  -- 开启时标题栏显示 T / G / Aa / W
+  -- （snacks 自带的 <a-h>/<a-i>/<a-f>/<a-p> 被 zellij 占了，所以选 t/g）
   {
     "folke/snacks.nvim",
-    opts = {
-      picker = {
-        sources = {
-          explorer = {
-            win = {
-              list = {
-                keys = {
-                  ["<esc>"] = { "", mode = "n" },
-                },
-              },
+    opts = function(_, opts)
+      local excludes = {
+        no_tests = { "*_test.go", "**/mocks/**", "**/mock/**" },
+        no_gen = { "**/kitex_gen/**", "**/thrift_gen/**", "**/mocks_autogen/**", "*.pb.go" },
+      }
+      -- 默认 --smart-case；rg 里后出现的大小写 flag 覆盖前面的
+      local flags = {
+        case_sensitive = "--case-sensitive",
+        whole_word = "--word-regexp",
+      }
+      local grep_opts = {
+        toggles = { no_tests = "T", no_gen = "G", case_sensitive = "Aa", whole_word = "W" },
+        -- 默认排除测试和生成代码，需要时 <a-t>/<a-g> 关掉
+        no_tests = true,
+        no_gen = true,
+        finder = function(o, ctx)
+          local exclude = vim.list_extend({}, o.exclude or {})
+          for name, globs in pairs(excludes) do
+            if o[name] then
+              vim.list_extend(exclude, globs)
+            end
+          end
+          local args = vim.list_extend({}, o.args or {})
+          for name, flag in pairs(flags) do
+            if o[name] then
+              args[#args + 1] = flag
+            end
+          end
+          return require("snacks.picker.source.grep").grep(
+            setmetatable({ exclude = exclude, args = args }, { __index = o }),
+            ctx
+          )
+        end,
+        win = {
+          input = {
+            keys = {
+              ["<a-t>"] = { "toggle_no_tests", mode = { "i", "n" } },
+              ["<a-g>"] = { "toggle_no_gen", mode = { "i", "n" } },
+              -- 同 VSCode：Alt-c 大小写、Alt-w 全词、Alt-r 正则（snacks 自带）
+              ["<a-c>"] = { "toggle_case_sensitive", mode = { "i", "n" } },
+              ["<a-w>"] = { "toggle_whole_word", mode = { "i", "n" } },
             },
           },
         },
-      },
-    },
+      }
+      return vim.tbl_deep_extend("force", opts, {
+        picker = {
+          sources = {
+            explorer = {
+              win = {
+                list = {
+                  keys = {
+                    ["<esc>"] = { "", mode = "n" },
+                  },
+                },
+              },
+            },
+            grep = grep_opts,
+            grep_word = grep_opts,
+          },
+        },
+      })
+    end,
   },
 
   -- add navbuddy
